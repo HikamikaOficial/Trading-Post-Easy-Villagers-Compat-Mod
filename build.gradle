@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+group = 'com.axelr'
+version = '1.0.1'
+
+base {
+    archivesName = 'tradingpost-easyvillagers-compat-1.21.1'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = '21.1.241'
+}
+
+dependencies {
+    compileOnly files('libs/TradingPost-v21.1.1-1.21.1-NeoForge.jar')
+    compileOnly files('libs/easy-villagers-neoforge-1.21.1-1.1.42.jar')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
